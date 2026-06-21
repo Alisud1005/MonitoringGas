@@ -381,7 +381,7 @@ export default function Dashboard() {
             </div>
             <div className="leading-tight">
               <p className="font-display text-base font-semibold tracking-tight">
-                GasGuard
+                OkeGas-OkeGas
               </p>
               <p className="text-[11px] text-[#7C8AA0] -mt-0.5">Sistem Monitoring Gas Real-Time</p>
             </div>
