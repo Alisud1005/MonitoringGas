@@ -317,7 +317,7 @@ export default function Dashboard() {
         setStatusGas(status);
         setReadingCount((c) => c + 1);
 
-        let nilaiNumerik = status === "AMAN" ? 300 : status === "WASPADA" ? 700 : 1200;
+        let nilaiNumerik = status === "AMAN" ? 300 : status === "WASPADA" ? 700 : 1000;
         setDataGrafik((prev) => [...prev.slice(-19), { time: timeLabel, value: nilaiNumerik }]);
         setRiwayat((prev) => [{ status, time: timeLabel }, ...prev].slice(0, 20));
       }
