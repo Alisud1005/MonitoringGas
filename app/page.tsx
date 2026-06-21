@@ -140,7 +140,7 @@ function Activity({ size = 18, className }: IconProps) {
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
 
-const MAX_VALUE = 1500;
+const MAX_VALUE = 1024;
 
 function polarToCartesian(cx: number, cy: number, r: number, thetaDeg: number) {
   const rad = (thetaDeg * Math.PI) / 180;
@@ -196,21 +196,21 @@ const STATUS_STYLES: Record<
 const ZONES = [
   {
     label: "AMAN",
-    range: "0 – 499",
+    range: "<600",
     textClass: "text-[#2DD4A8]",
     dotClass: "bg-[#2DD4A8]",
     desc: "Kondisi udara normal. Tidak ada tindakan yang diperlukan.",
   },
   {
     label: "WASPADA",
-    range: "500 – 899",
+    range: "<800",
     textClass: "text-[#F5A623]",
     dotClass: "bg-[#F5A623]",
     desc: "Kadar gas mulai meningkat. Periksa sumber kebocoran dan tingkatkan ventilasi ruangan.",
   },
   {
     label: "BAHAYA",
-    range: "900 – 1500",
+    range: ">800",
     textClass: "text-[#FF4458]",
     dotClass: "bg-[#FF4458]",
     desc: "Kadar gas pada level berbahaya. Evakuasi area, matikan sumber api/listrik, dan hubungi petugas terkait.",
@@ -576,9 +576,9 @@ export default function Dashboard() {
 
                       {/* Skala nilai (opsional, tambahkan agar lebih informatif) */}
                       <text x="14" y="156" fill="#5B6678" fontSize="10">0</text>
-                      <text x="198" y="156" fill="#5B6678" fontSize="10">1500</text>
+                      <text x="198" y="156" fill="#5B6678" fontSize="10">1024</text>
                       <text x="14" y="156" fill="#5B6678" fontSize="10">0</text>
-                      <text x="198" y="156" fill="#5B6678" fontSize="10">1500</text>
+                      <text x="198" y="156" fill="#5B6678" fontSize="10">1024</text>
                     </svg>
                     <div className="absolute inset-x-0 bottom-0 text-center">
                       <p className="font-data text-2xl font-bold tabular-nums">
@@ -614,7 +614,7 @@ export default function Dashboard() {
                         </defs>
                         <CartesianGrid strokeDasharray="3 3" stroke="#1E2738" vertical={false} />
                         <XAxis dataKey="time" hide />
-                        <YAxis domain={[0, 1500]} tick={{ fill: "#5B6678", fontSize: 11 }} axisLine={false} tickLine={false} width={36} />
+                        <YAxis domain={[0, 1024]} tick={{ fill: "#5B6678", fontSize: 11 }} axisLine={false} tickLine={false} width={36} />
                         <Tooltip
                           contentStyle={{ background: "#0D1320", border: "1px solid #1E2738", borderRadius: 8, fontSize: 12 }}
                           labelStyle={{ color: "#9AA6B8" }}
